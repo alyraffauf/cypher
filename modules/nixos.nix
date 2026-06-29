@@ -40,6 +40,7 @@ in {
             chezmoi
             curl
             bat
+            bsky-cli
             eza
             fd
             fzf
