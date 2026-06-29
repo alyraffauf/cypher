@@ -39,7 +39,9 @@ in {
             age
             chezmoi
             curl
+            bat
             eza
+            fd
             fzf
             gh
             helix
@@ -47,12 +49,15 @@ in {
             jq
             just
             nodejs
+            opencode
             python3
             ripgrep
             sops
             ssh-to-age
+            tmux
             wget
             zellij
+            xh
           ];
 
           variables = {
