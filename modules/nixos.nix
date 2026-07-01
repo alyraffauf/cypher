@@ -150,7 +150,7 @@ in {
 
             aly = {
               isNormalUser = true;
-              extraGroups = ["wheel" "docker"];
+              extraGroups = ["wheel"];
               shell = pkgs.fish;
               openssh.authorizedKeys.keyFiles = alyKeys;
             };
@@ -158,7 +158,7 @@ in {
             cypher = {
               isNormalUser = true;
               linger = true;
-              extraGroups = ["docker"];
+              extraGroups = [];
               shell = pkgs.bash;
               openssh.authorizedKeys.keyFiles = alyKeys;
             };
@@ -166,14 +166,11 @@ in {
         };
 
         virtualisation = {
-          docker = {
-            enable = true;
-            autoPrune.enable = true;
-          };
-
           podman = {
             enable = true;
             dockerCompat = true;
+            defaultNetwork.socket = true;
+            autoPrune.enable = true;
           };
         };
       })
