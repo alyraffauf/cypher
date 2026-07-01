@@ -41,6 +41,7 @@ in {
             curl
             bat
             bsky-cli
+            docker-compose
             eza
             fd
             fzf
@@ -149,7 +150,7 @@ in {
 
             aly = {
               isNormalUser = true;
-              extraGroups = ["wheel"];
+              extraGroups = ["wheel" "docker"];
               shell = pkgs.fish;
               openssh.authorizedKeys.keyFiles = alyKeys;
             };
@@ -157,9 +158,22 @@ in {
             cypher = {
               isNormalUser = true;
               linger = true;
+              extraGroups = ["docker"];
               shell = pkgs.bash;
               openssh.authorizedKeys.keyFiles = alyKeys;
             };
+          };
+        };
+
+        virtualisation = {
+          docker = {
+            enable = true;
+            autoPrune.enable = true;
+          };
+
+          podman = {
+            enable = true;
+            dockerCompat = true;
           };
         };
       })
