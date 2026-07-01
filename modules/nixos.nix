@@ -41,6 +41,7 @@ in {
             curl
             bat
             bsky-cli
+            chromium
             docker-compose
             eza
             fd
