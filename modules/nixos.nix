@@ -169,7 +169,6 @@ in {
           podman = {
             enable = true;
             dockerCompat = true;
-            defaultNetwork.socket = true;
             autoPrune.enable = true;
           };
         };
