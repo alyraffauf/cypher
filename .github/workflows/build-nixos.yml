@@ -24,6 +24,6 @@ jobs:
         with:
           fetch-depth: 1
       - uses: DeterminateSystems/nix-installer-action@v22
-      - uses: DeterminateSystems/magic-nix-cache-action@v14
+      - uses: DeterminateSystems/magic-nix-cache-action@v15
       - name: Build cypher
         run: nix build --accept-flake-config --print-out-paths .#nixosConfigurations.cypher.config.system.build.toplevel
